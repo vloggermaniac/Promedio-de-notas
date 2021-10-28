@@ -1,0 +1,68 @@
+<!Doctype html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<title>Desafío.....</title>
+	</head>
+
+	<body>
+		<script>
+			
+			var curso=
+				[
+					{alum:"a", notas:["","",""], prom:0},
+					{alum:"b", notas:["","",""], prom:0},
+					{alum:"c", notas:["","",""], prom:0}
+				];
+			
+									
+			var promedioC = function (promC)
+				{
+					return promC/curso.length;
+				}
+	
+			var promedioAlum = function (promA)
+				{
+					return promA/curso[0].notas.length;
+				}
+
+			var promcurso = 0;
+			var mayor = 0;		
+			for (var c = 0; c < curso.length; c++)
+				{
+					alert("Notas del alumno:  " + curso[c].alum);
+
+						var suma = 0;
+						
+						for (var i = 0; i < curso[c].notas.length; i++)
+						{
+							var nota = prompt("Ingrese nota alumno");
+							curso[c].notas[i]= nota;
+							curso[c].prom += parseInt(nota);
+							mayor = curso[c].prom;
+							suma+= parseInt(curso[c].notas[i]);
+						}
+					
+					promcurso += parseInt(promedioAlum(suma));
+					
+					document.write("<p> Promedio alumno:  " + curso[c].alum + promedioAlum(suma) + "</p>");	
+
+				}
+				
+				var mayor2 = mayor;
+ 					for(i = 0; i < curso.length; i++)
+						{
+    							if (curso[i].prom > mayor2)
+    						{
+       							mayor2 = parseInt(curso[i].prom);
+    						};
+						};
+								
+				document.write("<p> El mejor promedio es "+ " "  + promedioC(mayor2) + "</p>");
+				document.write("<p> Promedio Curso" + " " + promedioC(promcurso) + "</p>");
+						
+					
+		</script>
+			
+	</body>
+</html>
